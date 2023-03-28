@@ -1,14 +1,14 @@
 {
-  "name": "khana-khazana",
+  "name": "binary",
   "version": "1.0.0",
-  "description": "A Food ordering app",
+  "description": "An Online Food ordering web-app",
   "scripts": {
     "start": "parcel index.html",
     "build": "parcel build index.html",
     "test": "jest",
     "watch-test": "jest --watch"
   },
-  "author": "Zaid Sheriff",
+  "author": "rahul ray yadav",
   "license": "ISC",
   "devDependencies": {
     "@babel/core": "^7.21.3",
