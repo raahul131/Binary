@@ -50,7 +50,7 @@ const Header = () => {
                   <MdShoppingCart fontSize='24px' />
                   <span
                     data-testid='cart'
-                    className='absolute top-[-8px] left-4 w-4 h-4 p-3 flex justify-center items-center rounded-full bg-lime-500 text-white text-xs'
+                    className='absolute top-[-8px] left-4 w-4 h-4 p-3 flex justify-center items-center rounded-full text-black text-xs'
                   >
                     {cartItems}
                   </span>
