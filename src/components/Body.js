@@ -31,13 +31,13 @@ const Body = () => {
       ) : (
         <>
           <div className='w-full h-12 flex justify-center mt-4'>
-            <div className='w-[90%] pr-4 flex items-center border-solid border-2 border-[rgba(40,44,63,.3)] rounded-md lg:w-[60%]'>
+            <div className='w-[90%] pr-4 flex items-center border-solid border  rounded-md lg:w-[60%]'>
               <div data-testid='search-btn' className='flex-1 py-0 px-4'>
                 <input
                   data-testid='search-input'
                   type='text'
                   className='w-full h-full outline-0 border-none overflow-hidden text-ellipsis align-middle font-mono font-medium'
-                  placeholder='Search for restaurants...'
+                  placeholder='Search for restaurants and food...'
                   value={searchText}
                   onChange={(e) => {
                     if (!e.target.value) {
@@ -71,7 +71,7 @@ const Body = () => {
             </div>
           ) : (
             <div className='flex flex-1 justify-center items-center font-mono text-lg'>
-              No restaurant found.
+              Oops, No restaurant found !!!
             </div>
           )}
         </>

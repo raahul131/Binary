@@ -19,7 +19,7 @@ const Header = () => {
 
   return (
     <div className='sticky top-0 z-10'>
-      <div className='flex justify-between w-full h-20 py-2 px-4 bg-white shadow-lg shadow-gray-500/50'>
+      <div className='flex justify-between w-full h-20 py-2 px-4 bg-white shadow-md'>
         <Title />
         <div className='flex'>
           <ul className='flex py-4 font-bold'>
