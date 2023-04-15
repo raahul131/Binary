@@ -1,18 +1,19 @@
-import React, { lazy, Suspense } from 'react';
-import ReactDOM from 'react-dom/client';
-import { createBrowserRouter, RouterProvider, Outlet } from 'react-router-dom';
-import { Provider } from 'react-redux';
-import Header from './components/Header';
-import Footer from './components/Footer';
-import Error from './components/Error';
-import RestaurantMenu from './components/RestaurantMenu';
-import Shimmer from './components/Shimmer';
-import OffersShimmer from './components/OffersShimmer';
-import store from './utils/store';
-import Main from './components/Main';
+import React, { lazy, Suspense } from "react";
+import ReactDOM from "react-dom/client";
+import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
+import { Provider } from "react-redux";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
+import Error from "./components/Error";
+import RestaurantMenu from "./components/RestaurantMenu";
+import Shimmer from "./components/Shimmer";
+import OffersShimmer from "./components/OffersShimmer";
+import store from "./utils/store";
+import Main from "./components/Main";
+import { createRoot } from "react-dom/client";
 
-const Offers = lazy(() => import('./components/Offers'));
-const Cart = lazy(() => import('./components/Cart'));
+const Offers = lazy(() => import("./components/Offers"));
+const Cart = lazy(() => import("./components/Cart"));
 
 const AppLayout = () => {
   return (
@@ -26,16 +27,16 @@ const AppLayout = () => {
 
 const appRouter = createBrowserRouter([
   {
-    path: '/',
+    path: "/",
     element: <AppLayout />,
     errorElement: <Error />,
     children: [
       {
-        path: '/',
+        path: "/",
         element: <Main />,
       },
       {
-        path: '/offers',
+        path: "/offers",
         element: (
           <Suspense fallback={<OffersShimmer />}>
             <Offers />
@@ -43,11 +44,11 @@ const appRouter = createBrowserRouter([
         ),
       },
       {
-        path: '/restaurant/:id',
+        path: "/restaurant/:id",
         element: <RestaurantMenu />,
       },
       {
-        path: '/cart',
+        path: "/cart",
         element: (
           <Suspense fallback={<Shimmer />}>
             <Cart />
@@ -57,6 +58,7 @@ const appRouter = createBrowserRouter([
     ],
   },
 ]);
-const root = ReactDOM.createRoot(document.getElementById('root'));
+
+const root = createRoot(document.getElementById("root"));
 
 root.render(<RouterProvider router={appRouter} />);
