@@ -1,15 +1,15 @@
-import { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
-import RestaurantCard from './RestaurantCard';
-import Shimmer from './Shimmer';
-import { filterData } from '../utils/helper';
-import { RESTAURANTS_URL } from '../constants';
-import { ImSearch } from 'react-icons/im';
+import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
+import RestaurantCard from "./RestaurantCard";
+import Shimmer from "./Shimmer";
+import { filterData } from "../utils/helper";
+import { RESTAURANTS_URL } from "../constants";
+import { ImSearch } from "react-icons/im";
 
 const Body = () => {
   const [allRestaurants, setAllRestaurants] = useState([]);
   const [filteredRestaurants, setFilteredRestaurants] = useState([]);
-  const [searchText, setSearchText] = useState('');
+  const [searchText, setSearchText] = useState("");
 
   useEffect(() => {
     getRestaurants();
@@ -30,14 +30,13 @@ const Body = () => {
         <Shimmer />
       ) : (
         <>
-          <div className='w-full h-12 flex justify-center mt-4'>
-            <div className='w-[90%] pr-4 flex items-center border-solid border  rounded-md lg:w-[60%]'>
-              <div data-testid='search-btn' className='flex-1 py-0 px-4'>
+          <div className="w-full h-12 flex justify-center mt-4">
+            <div className="w-[90%] pr-4 flex items-center border-solid border  rounded-md lg:w-[60%]">
+              <div className="flex-1 py-0 px-4">
                 <input
-                  data-testid='search-input'
-                  type='text'
-                  className='w-full h-full outline-0 border-none overflow-hidden text-ellipsis align-middle font-mono font-medium'
-                  placeholder='Search for restaurants and food...'
+                  type="text"
+                  className="w-full h-full outline-0 border-none overflow-hidden text-ellipsis align-middle font-mono font-medium"
+                  placeholder="Search for restaurants and food..."
                   value={searchText}
                   onChange={(e) => {
                     if (!e.target.value) {
@@ -51,14 +50,13 @@ const Body = () => {
                   }}
                 />
               </div>
-              <ImSearch fontSize='large' />
+              <ImSearch fontSize="large" />
             </div>
           </div>
 
           {filteredRestaurants?.length > 0 ? (
             <div
-              data-testid='restaurant-list'
-              className='flex flex-wrap justify-center max-w-[1200px] w-full my-0 mx-auto'
+              className="flex flex-wrap justify-center max-w-[1200px] w-full my-0 mx-auto"
             >
               {filteredRestaurants.map((restaurant) => (
                 <Link
@@ -70,7 +68,7 @@ const Body = () => {
               ))}
             </div>
           ) : (
-            <div className='flex flex-1 justify-center items-center font-mono text-lg'>
+            <div className="flex flex-1 justify-center items-center font-mono text-lg">
               Oops, No restaurant found !!!
             </div>
           )}

@@ -10,6 +10,7 @@ import OffersShimmer from "./components/OffersShimmer";
 import store from "./utils/store";
 import Main from "./components/Main";
 import { createRoot } from "react-dom/client";
+import Bdy from "./components/Bdy";
 
 const Offers = lazy(() => import("./components/Offers"));
 const Cart = lazy(() => import("./components/Cart"));
@@ -18,7 +19,8 @@ const AppLayout = () => {
   return (
     <Provider store={store}>
       <Header />
-      <Outlet />
+      <Bdy />
+      {/* <Outlet /> */}
       <Footer />
     </Provider>
   );
